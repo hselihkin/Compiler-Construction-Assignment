@@ -1,0 +1,7 @@
+FILE = ast
+
+b:
+	bison -d $(FILE).y
+	flex $(FILE).l
+	gcc $(FILE).tab.c lex.yy.c $(FILE).c -lfl
+	./a.out
